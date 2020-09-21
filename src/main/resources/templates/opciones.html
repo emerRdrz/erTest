@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+
+    <title>Base Project ER S2 - opciones</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <!-- Custom styles for this template -->
+    <link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+    
+ 	<link href="#" th:href="@{/css/contacts.css}" rel="stylesheet" />
+ 	
+  </head>
+
+  <body>
+	
+	<div class="container">
+	
+		<h1>Hello, <span th:text="${username}"></span>!</h1>
+		<br/>
+		
+		<div th:if="${result == 1}" class="alert alert-success" role="alert">Added Successfully!!!</div>
+		<div th:if="${result == 0}" class="alert alert-danger" role="alert">Error adding contact!!!</div>
+		
+		<a href="#" th:href="@{/grados/showGrados}">
+			<button class="btn btn-lg btn-primary btn-block" type="submit"><span  aria-hidden="true"></span> Lista Grados</button>
+		</a>
+		
+		<br/>
+		<a href="#" th:href="@{/profesores/showProfesores}">
+			<button class="btn btn-lg btn-primary btn-block" type="submit"><span  aria-hidden="true"></span> Lista Profesores</button>
+		</a>
+		<br/>
+		
+		<a href="#" th:href="@{/alumnos/showAlumnos}">
+			<button class="btn btn-lg btn-primary btn-block" type="submit"><span  aria-hidden="true"></span> Lista ALumnos</button>
+		</a>
+		<br/>
+		
+		<form th:action="@{/logout}" method="POST">
+			<button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</button>
+		</form>
+		
+		<br/>
+		
+		<a href="#" th:href="@{/rest/consultaAlumno/RG01}"> Rest Consulta Alumno!!!
+		</a>
+		
+	
+	</div>
+
+
+</body>
+</html>

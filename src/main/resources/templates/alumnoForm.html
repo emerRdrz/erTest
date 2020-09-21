@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Base Project ER S2 - Agregar/Modificar Profesor</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Alumno Form</h1>
+			<br/>
+			<form action="#" th:action="@{/alumnos/addAlumno}" th:object="${alumno}" method="post">
+				<input type="hidden" th:field="*{idAlumno}"></input>
+				Nombre: <input type="text" class="form-control" th:field="*{nombre}" th:value="${nombre}"></input>
+				<br/>
+				Apellido: <input type="text" class="form-control" th:field="*{apellidos}" th:value="${apellidos}"></input>
+				<br/>
+				Edad: <input type="text" class="form-control" th:field="*{edad}" th:value="${edad}"></input>
+				<br/>
+				No Carnet: <input type="text" class="form-control" th:field="*{numeroCarnet}" th:value="${numeroCarnet}"></input>
+				<br/>
+				Nombre del Padre: <input type="text" class="form-control" th:field="*{nombrePadre}" th:value="${nombrePadre}"></input>
+				<br/>
+				Nombre de la Madre: <input type="text" class="form-control" th:field="*{nombreMadre}" th:value="${nombreMadre}"></input>
+				<br/>
+				Nota final: <input type="text" class="form-control" th:field="*{notaFinal}" th:value="${notaFinal}"></input>
+				<br/>
+				Profesor: <select class="form-control"
+					th:field="*{idProfesor.idProfesor}">
+					<option value="-1">--- Seleccione ---</option>
+					<option
+						th:each="profesor : ${profesoresList}"
+						th:value="${profesor.idProfesor}"
+						th:text="${profesor.nombre + ' ' + profesor.apellidos}"></option>
+				</select> 
+				<br/>
+				<br/>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Accept
+				</button>				
+			</form>
+			<br/>
+			<a href="#" th:href="@{/alumnos/cancel}" >			
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel
+				</button>
+			</a>
+		</div>
+	</div>
+
+</body>
+</html>
