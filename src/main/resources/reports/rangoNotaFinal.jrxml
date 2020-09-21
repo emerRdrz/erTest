@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rangoNotaFinal" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="73af7169-bffe-4cbb-a5b5-da1ba43a2bbc">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mydbtest"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="e3f68086-30fc-481a-a58c-7d727b62f1db">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mydbtest"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT a.nombre, a.apellidos, a.numero_carnet, a.nota_final, CONCAT(p.nombre, ' ' , p.apellidos) as profesor, g.nombre as grado  FROM 
+mydbtest.alumnos a 
+inner join mydbtest.profesores p 
+on a.id_profesor = p.id_profesor
+inner join mydbtest.grados g
+on g.id_grado = p.id_grado  
+where a.nota_final between 1 and 3 order by a.apellidos]]>
+		</queryString>
+		<field name="nombre" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="apellidos" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="apellidos"/>
+			<property name="com.jaspersoft.studio.field.label" value="apellidos"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="numero_carnet" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="numero_carnet"/>
+			<property name="com.jaspersoft.studio.field.label" value="numero_carnet"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nota_final" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="nota_final"/>
+			<property name="com.jaspersoft.studio.field.label" value="nota_final"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="profesor" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="profesor"/>
+			<property name="com.jaspersoft.studio.field.label" value="profesor"/>
+		</field>
+		<field name="grado" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.label" value="grado"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="grados"/>
+		</field>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="70b48403-8dc7-4b7e-8d86-adf095abce12">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mydbtest"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT a.nombre, a.apellidos, a.numero_carnet, a.nota_final, CONCAT(p.nombre, ' ' , p.apellidos) as profesor, g.nombre as grado  FROM 
+mydbtest.alumnos a 
+inner join mydbtest.profesores p 
+on a.id_profesor = p.id_profesor
+inner join mydbtest.grados g
+on g.id_grado = p.id_grado  
+where a.nota_final between 4 and 6  order by a.apellidos]]>
+		</queryString>
+		<field name="nombre" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="apellidos" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="apellidos"/>
+			<property name="com.jaspersoft.studio.field.label" value="apellidos"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="numero_carnet" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="numero_carnet"/>
+			<property name="com.jaspersoft.studio.field.label" value="numero_carnet"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nota_final" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="nota_final"/>
+			<property name="com.jaspersoft.studio.field.label" value="nota_final"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="profesor" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="profesor"/>
+			<property name="com.jaspersoft.studio.field.label" value="profesor"/>
+		</field>
+		<field name="grado" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.label" value="grado"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="grados"/>
+		</field>
+	</subDataset>
+	<subDataset name="Dataset3" uuid="72623d5c-f52b-48f3-be2d-0536efa375cb">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mydbtest"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT a.nombre, a.apellidos, a.numero_carnet, a.nota_final, CONCAT(p.nombre, ' ' , p.apellidos) as profesor, g.nombre as grado  FROM 
+mydbtest.alumnos a 
+inner join mydbtest.profesores p 
+on a.id_profesor = p.id_profesor
+inner join mydbtest.grados g
+on g.id_grado = p.id_grado  
+where a.nota_final between 7 and 10  order by a.apellidos]]>
+		</queryString>
+		<field name="nombre" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="apellidos" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="apellidos"/>
+			<property name="com.jaspersoft.studio.field.label" value="apellidos"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="numero_carnet" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="numero_carnet"/>
+			<property name="com.jaspersoft.studio.field.label" value="numero_carnet"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nota_final" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="nota_final"/>
+			<property name="com.jaspersoft.studio.field.label" value="nota_final"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="alumnos"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="profesor" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="profesor"/>
+			<property name="com.jaspersoft.studio.field.label" value="profesor"/>
+		</field>
+		<field name="grado" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.label" value="grado"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="grados"/>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select 1 from dual]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="154" y="24" width="264" height="30" uuid="53a678b1-50dd-42ff-8a94-f749ed769488"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Rango Nota Final]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="124" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="30" width="570" height="60" uuid="fe41a780-d546-4674-b25c-b8ee8694a7b3">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="NoDataCell">
+					<datasetRun subDataset="Dataset1" uuid="595d2fef-d106-4698-86de-7163c5968f65">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="110" uuid="b4b898df-cfe9-4552-8332-bdcd5f6e4b79">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="30" uuid="1ae902d6-3f34-469e-8dc1-1f31c052a015"/>
+								<text><![CDATA[Apellido]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="110" height="30" uuid="bb1278d0-dc7f-4f18-83eb-74f831b6ccf0"/>
+								<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="18d2d5d7-209e-42db-9bc9-f077d0b6f42f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="218347aa-985f-4a32-a669-58f4ce9ee3b1"/>
+								<text><![CDATA[Nombre]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="514a638a-4ccd-4942-9aa0-b5f5225aa212"/>
+								<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="d29c95a5-700c-49a0-9cd8-f23b6ab2a446">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="79b66d7e-9a23-47f5-8a8d-7e0a8e713a46"/>
+								<text><![CDATA[Numero Carnet]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="e0996d92-260f-4601-b8f8-22fbe632bbfb"/>
+								<textFieldExpression><![CDATA[$F{numero_carnet}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="703dadb3-0d3e-4bc2-bbdb-108dccb5c496">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="398f3b77-9948-41dd-ba28-d8102b778ce7"/>
+								<text><![CDATA[Nota Final]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="ced5e949-7240-4bd2-ab00-cfdc85948e04"/>
+								<textFieldExpression><![CDATA[$F{nota_final}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="170" uuid="73b723da-aac6-4706-8a8f-88f759494151">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="170" height="30" uuid="521ab396-6abb-4f3b-8f2d-810b4dd279f7"/>
+								<text><![CDATA[Profesor]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="170" height="30" uuid="16fb6179-9b85-4435-9b88-eb8b5f943357"/>
+								<textFieldExpression><![CDATA[$F{profesor}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="b4283af4-74da-475e-a4fa-35a7992bfb6d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="2cc0d759-ece3-489c-9cdd-d76e3fec0155"/>
+								<text><![CDATA[Grado]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="1d2e506d-f589-4cee-a5d3-5b69e358c836"/>
+								<textFieldExpression><![CDATA[$F{grado}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="209" y="0" width="154" height="30" uuid="6262c08c-8a07-4a0c-be23-d191f627a55e"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rango Notas de 1 - 3]]></text>
+			</staticText>
+		</band>
+		<band height="124" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<componentElement>
+				<reportElement x="0" y="40" width="570" height="60" uuid="0f5c7275-bd91-4583-9ed1-e7c5c5122f92">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="NoDataCell">
+					<datasetRun subDataset="Dataset2" uuid="5cdb2d12-921c-4880-a3dc-d403ec13301f">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="110" uuid="ef5a6e56-ef16-4970-a71f-2482fbaf0213">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="30" uuid="e1f5fbcc-5dbb-4667-8371-12bfa4f46ffb"/>
+								<text><![CDATA[Apellido]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="110" height="30" uuid="82e5b722-6e53-4a8a-a136-86bc8e8d14b0"/>
+								<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="1b188acb-502e-4869-93bb-b99d456bdc89">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="aa260395-5ad1-4501-bc14-31e31115167b"/>
+								<text><![CDATA[Nombre]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="d32ec40d-d79b-4408-98dc-e75e9056a9f5"/>
+								<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="c84253ca-3df7-4a13-95b1-d3d4ff2a591d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="932e42a8-8e1d-4673-a839-c0fd6bd70791"/>
+								<text><![CDATA[Numero Carnet]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="db4ebb6a-943c-4f0a-b05c-c35b41a9f4dc"/>
+								<textFieldExpression><![CDATA[$F{numero_carnet}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="b0e6025a-1876-4925-96e0-5303bb0f6f67">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="abda10c8-d167-4300-abeb-145e18e014b9"/>
+								<text><![CDATA[Nota Final]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="26dc578a-c101-427b-b5c4-5c187231c0cd"/>
+								<textFieldExpression><![CDATA[$F{nota_final}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="170" uuid="385162a6-e079-4cab-b07f-997b6ca2eb68">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="170" height="30" uuid="d1f2d8fd-80fc-43a2-bcc4-a8aa2884491a"/>
+								<text><![CDATA[Profesor]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="170" height="30" uuid="c0774354-b28c-4246-9333-8b411851783d"/>
+								<textFieldExpression><![CDATA[$F{profesor}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="c7c798ad-0f4a-47fc-a9f7-e752ef57e6fd">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="261c3e72-3857-4b04-8a44-0aa90504c17e"/>
+								<text><![CDATA[Grado]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="b17df5b8-4bac-4c3f-9af5-595b183a0dc7"/>
+								<textFieldExpression><![CDATA[$F{grado}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="209" y="0" width="154" height="30" uuid="917195f8-b620-435e-962d-a43c3897c1c2"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rango Notas de 4 - 6]]></text>
+			</staticText>
+		</band>
+		<band height="124" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<componentElement>
+				<reportElement x="0" y="30" width="570" height="60" uuid="aa99d718-a17b-4510-aabd-e0e51466a68e">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="NoDataCell">
+					<datasetRun subDataset="Dataset3" uuid="aed12544-a697-4b80-a213-5bff77869ff9">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="110" uuid="da0e65bd-a1b4-43c1-8cdc-922fef19de22">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="30" uuid="245b7ba0-29c1-4513-b358-70820e51137b"/>
+								<text><![CDATA[Apellido]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="110" height="30" uuid="7ea1bcb8-a9d0-444f-bc3c-b225746a140f"/>
+								<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="15b89e4b-efcd-43bb-b511-a6b18409c61d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="a7c2e023-5b39-4352-afe8-c99a23659665"/>
+								<text><![CDATA[Nombre]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="b017ef2d-d456-4147-a42d-e2d6fd8d6f6f"/>
+								<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="311e9592-9558-40fa-aa05-1a850e7b0aaa">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="e9f8a95b-d2a1-4039-baed-7efd6e2dc1a3"/>
+								<text><![CDATA[Numero Carnet]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="9cf74ed7-8790-450a-a794-fb3338cd8d27"/>
+								<textFieldExpression><![CDATA[$F{numero_carnet}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="a3a7fcaa-ccd4-455f-96eb-8cdd269e1670">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="3d53f9fc-f016-4d3c-a919-d5bbd3c27f68"/>
+								<text><![CDATA[Nota Final]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="23e2ead0-cb0f-4a74-9082-234592655170"/>
+								<textFieldExpression><![CDATA[$F{nota_final}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="170" uuid="f4e981e1-507c-4960-85e3-df7db628ca51">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="170" height="30" uuid="6fac77a4-4a05-4297-a9ed-033d2b8bbc41"/>
+								<text><![CDATA[Profesor]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="170" height="30" uuid="bd976530-da92-4618-962c-45f121c603b6"/>
+								<textFieldExpression><![CDATA[$F{profesor}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="8705e49e-334b-4412-8b29-c5241420b28c">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="39a39c7b-2e46-451c-9b03-96462ab66c46"/>
+								<text><![CDATA[Grado]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="0cf02cdf-cab6-4f6d-a1fc-37de33a8fef8"/>
+								<textFieldExpression><![CDATA[$F{grado}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="209" y="0" width="154" height="30" uuid="c0fb4542-e3a9-4b45-9ada-e63c11a599a1"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rango Notas de 7 - 10]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
